@@ -16,7 +16,7 @@ app.use('/graphql',
 )
 
 app.get('*', (req,res) => {
-    res.sendFile(path.resolve(_dirname, "public", 'index.html'))
+    res.sendFile(path.resolve(__dirname, "public", 'index.html'))
 })
 
 // Allow Cross Origin 
