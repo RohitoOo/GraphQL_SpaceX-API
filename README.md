@@ -8,11 +8,11 @@ This is a full-stack app designed to consume the SpaceX Api.
 
 ![SpaceX](spacex.png)
 
-I am using **React, GraphQL, Apollo ** on the Front End and ** Express GraphQL Server** on the backend.
+I am using **React, GraphQL, Apollo** on the Front End and **Express GraphQL Server** on the Backend.
 
 To run this app:
 
-* `git clone https://github.com/RohitoOo/GraphQL_SpaceX-API` - Clone this repo
+* `git clone https://github.com/RohitoOo/GraphQL_SpaceX-API` - Clone this repository
 * `cd into_directory` - Access Root Directory
 * `npm install` - Install Back End Dependencies
 * `cd client && npm install` - Install Front End Dependencies
