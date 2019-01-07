@@ -21,7 +21,7 @@ app.get('*', (req,res) => {
 
 // Allow Cross Origin 
 
-app.use(express.status('public'))
+app.use(express.static('public'))
 
 const port = process.env.PORT || 5000
 
