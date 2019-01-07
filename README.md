@@ -6,6 +6,8 @@ This is a full-stack app designed to consume the SpaceX Api.
 
 **Functionalities:** Listing SpaceX Launch Missions and Rocket Details.
 
+![SpaceX](spacex.png)
+
 I am using **React, GraphQL, Apollo ** on the Front End and ** Express GraphQL Server** on the backend.
 
 To run this app:
