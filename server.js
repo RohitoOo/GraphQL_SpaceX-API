@@ -15,13 +15,11 @@ app.use('/graphql',
     }) 
 )
 
+app.use(express.static('public'))
+
 app.get('*', (req,res) => {
     res.sendFile(path.resolve(__dirname, "public", 'index.html'))
 })
-
-// Allow Cross Origin 
-
-app.use(express.static('public'))
 
 const port = process.env.PORT || 5000
 
