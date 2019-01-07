@@ -3,6 +3,8 @@ const graphqlHTTP = require('express-graphql')
 const schema = require('./schema.js')
 const app = express();
 const cors = require('cors')
+const path = require('path')
+
 
 app.use(cors())
 
@@ -13,9 +15,13 @@ app.use('/graphql',
     }) 
 )
 
+app.get('*', (req,res) => {
+    res.sendFile(path.resolve(_dirname, "public", 'index.html'))
+})
+
 // Allow Cross Origin 
 
-
+app.use(express.status('public'))
 
 const port = process.env.PORT || 5000
 
