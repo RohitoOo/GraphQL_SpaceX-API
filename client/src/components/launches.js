@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+import LaunchItem from './LaunchItem'
+import MissionKey from './MissionKey'
 
 const LAUNCHES_QUERY = gql`
     query LaunchesQuery {
@@ -8,6 +10,7 @@ const LAUNCHES_QUERY = gql`
             flight_number
             mission_name
             launch_success
+            launch_year
         }
     }
 `
@@ -15,28 +18,29 @@ const LAUNCHES_QUERY = gql`
 class Launches extends React.Component{
     render(){
         return(
-            <div style={{textAlign:"center"}}>
+            <Fragment>
                 <h1 className="display-4 my-4">Launches</h1>
+                <MissionKey/>
                 <Query query={LAUNCHES_QUERY}>
                     {
                         ({loading, error, data}) => {
                             if(loading) return <h4>Loading...</h4>
-                            if(error)  console.log(error);
+                            if(error) return   console.log(error);
                             if(data) { return (
                                 <table className="table table-hover">
                                     <tbody>
-                                    {data.launches.map( each => 
-                                    <tr className="table-primary">
-                                        {each.flight_number} - {each.mission_name}
-                                    </tr> 
+                                    {data.launches.map( (launch,i) => 
+                                        <tr key={i} className="row mb-3">
+                                             <LaunchItem launch={launch} />
+                                        </tr> 
                                     )}
-                                     </tbody>
+                                    </tbody>
                                  </table>
                             ) }
                         }
                     }
                 </Query>
-            </div>
+            </Fragment>
         )
     }
 }

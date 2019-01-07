@@ -11,7 +11,8 @@ const LaunchType = new GraphQLObjectType({
         launch_year: { type: GraphQLInt },
         launch_date_local: { type: GraphQLInt },
         launch_success: { type: GraphQLBoolean },
-        rocket: {type: RocketType}
+        launch_year: {type: GraphQLString},
+        rocket: {type: RocketType},
     })
 })
 
